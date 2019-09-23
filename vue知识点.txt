@@ -1,0 +1,42 @@
+1.对于新手首先从页面的渲染开始说起，如何将动态数据渲染到页面中，如何绑定数据 如何遍历数组 vue指
+令的使用等等
+
+首先实现一个列表的遍历，数据为动态数据（模拟的数据完全遵循接口返回数据渲染）
+
+<template>
+   <div class="orderlist" v-for='item in orderlist'>  //说明：使用v-for进行遍历，orderlist可为数组也可为对象
+                                                              这个需要到时候调接口的时候看你们是怎么定的，注意
+                                                              这里的orderlist必须在return中定义，目前写的是模拟数据
+       <div class="ordertext">{{item.title}}</div>    //说明：这里就是需要渲染的地方，title是在return中定义的参数
+                                                              这个也是需要后期和后端定的可为多个值      
+   </div>
+</template>
+<script>
+   export default{
+       name:'app'，
+       data(){
+          return{  //retyrn函数中放的是需要返回的值
+            orderlist:[   
+                {
+                   title:'你好'
+                 },
+                 {
+                   title:'在吗'
+                 }
+             ]
+          }
+       }
+    }
+</script>
+<style scoped>
+  .orderlist{
+     width:100%;
+     height:1.5rem;
+     border:1px solid red;
+   }
+   .ordertext{
+     font-size: .4rem;
+     color:#000;
+   }
+</style>
+2.前端中最常的的指令使用方法及举例
