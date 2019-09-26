@@ -45,3 +45,52 @@ b.v-if 用于条件渲染，主要是通过dom元素来操作元素的显示与否，一般是根据接口中返回
 c.v-show 用于条件渲染，但是和v-if是有根本性的区别的，v-show是通过控制元素的display属性让元素的显示与否
 d.v-bind 用于绑定元素属性 比如v-bing:class绑定class的一个属性值，可缩写为:class，后期一般都进行缩写
 e.v-on 用于绑定一些事件 比如v-on:click绑定点击事件 可缩写为@click 后期一般都进行缩写
+f.v-model用于双向绑定数据 在表单input textarea select中实现双向数据绑定，主要是监听用户输入的内容并更新数据，比如<input v-model='msg'>
+</input>   <div>绑定的内容是：{{msg}}</div> 当输入框中的内容变化时，div中的值随之变化  这就是v-model的双向数据绑定
+实现一个选择框单选的例子
+<template>
+  <div id="example-5">
+      <select v-model="selected">
+        <option disabled value="">请选择</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+  <span>Selected: {{ selected }}</span>
+</div>
+</template>
+<script>
+   export default{
+      name:'example-5',
+      data(){
+         return{
+            selected: ''
+         }
+      }
+   }
+</script>
+说明：在实现选择框单选的时候点击下拉列表中的那个在span中显示那个具有唯一性
+
+实现一个v-for渲染的动态选项
+<template>
+  <select v-model="selected">
+      <option v-for="option in options" v-bind:value="option.value">
+        {{ option.text }}
+      </option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+</template>
+<script>
+   name:'...',
+   data(){
+     return{
+        selected: 'A',
+        options: [
+           { text: 'One', value: 'A' },
+           { text: 'Two', value: 'B' },
+           { text: 'Three', value: 'C' }
+        ]
+     }
+   }
+</script>
+说明：选择框中限制的值在我们点击的时候再span中展示的是我们在value上绑定的值
