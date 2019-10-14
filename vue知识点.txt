@@ -94,3 +94,6 @@ f.v-modelÓÃÓÚË«Ïò°ó¶¨Êý¾Ý ÔÚ±íµ¥input textarea selectÖÐÊµÏÖË«ÏòÊý¾Ý°ó¶¨£¬Ö÷ÒªÊÇ¼
    }
 </script>
 ËµÃ÷£ºÑ¡Ôñ¿òÖÐÏÞÖÆµÄÖµÔÚÎÒÃÇµã»÷µÄÊ±ºòÔÙspanÖÐÕ¹Ê¾µÄÊÇÎÒÃÇÔÚvalueÉÏ°ó¶¨µÄÖµ
+
+Ê¹ÓÃvue»ñÈ¡µ±Ç°Ê±¼äµÄÖµµÃ·½·¨
+new Date().toLocaleString() ==¡·2019/10/14 ÉÏÎç10:57:15
